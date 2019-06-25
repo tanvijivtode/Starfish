@@ -1,0 +1,14 @@
+[
+    {
+        "question" : "Question1",
+        "options" : ["answer1", "answer2", "answer3", "answer4", "answer5", "answer6"],
+        "responses" : [""],
+        "inputType" : "select"
+    },
+    {
+        "question" : "Question2",
+        "options" : ["answer1", "answer2", "answer3", "answer4", "answer5", "answer6"],
+        "responses" : [],
+        "inputType" : "checkbox"
+    }
+]

@@ -1,0 +1,49 @@
+<div class='fade-in'>
+    <div class='split left'>
+    <p class='title'>Tell us about yourself. </p>
+      <div class='notthebody'>
+             </div>
+    </div>
+
+    <div class='split right'>
+        <div class="notthebody ">
+            <form #surveyForm="ngForm" >
+                <div *ngFor="let question of questions; let i = index" class="form-group">
+                    <ng-container *ngIf="i === count">
+                        
+                        <div class="card-header">
+                            {{ question.question }}
+                        </div> 
+                    <ng-container *ngIf="question.inputType === 'select'">
+                        <div class='notthebody'>
+                            <div *ngFor="let option of question.options">
+                            <button class='button answerbutton'  id='{{option}}' (click)="addResponse(option, $event)"> {{option}} </button>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="question.inputType === 'checkbox'">
+                            <div class='notthebody'>
+                                <div *ngFor="let option of question.options">
+                                    <label class="container" for="{{option}}"> {{option}}
+                                        <input type="checkbox" id="{{option}}" name="{{option}}" [checked]="toggleChecked()" (click)="addResponses()">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <div class='next'>
+                            <button (click)="increment()" class='button' ><span>Next!</span></button>
+                        </div>
+                       
+                    </ng-container>
+                </div>
+
+               
+                
+            </form>
+        </div>
+    </div>
+       
+</div>
+
