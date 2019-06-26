@@ -1,7 +1,9 @@
 <div class='fade-in'>
     <div class='split left'>
-    <p class='title'>Tell us about yourself. </p>
-      <div class='notthebody'>
+      <div class=''>
+            <div class='title'>Tell us about yourself. </div>
+            <div class='notthebody'>These questions provide Starfish with information such as interests, environment, 
+                and daily habits. This allows Starfish to generate the best sustainable activities for you!</div>
              </div>
     </div>
 
@@ -11,21 +13,21 @@
                 <div *ngFor="let question of questions; let i = index" class="form-group">
                     <ng-container *ngIf="i === count">
                         
-                        <div class="card-header">
+                        <div class="question-header">
                             {{ question.question }}
                         </div> 
                     <ng-container *ngIf="question.inputType === 'select'">
                         <div class='notthebody'>
                             <div *ngFor="let option of question.options">
-                            <button class='button answerbutton'  id='{{option}}' (click)="addResponse(option, $event)"> {{option}} </button>
+                            <button class='answerbutton'  id='{{option.name}}' (click)="addResponses(option, $event, question.inputType)"> {{option.name}} </button>
                             </div>
                         </div>
                     </ng-container>
                     <ng-container *ngIf="question.inputType === 'checkbox'">
                             <div class='notthebody'>
                                 <div *ngFor="let option of question.options">
-                                    <label class="container" for="{{option}}"> {{option}}
-                                        <input type="checkbox" id="{{option}}" name="{{option}}" [checked]="toggleChecked()" (click)="addResponses()">
+                                    <label class="container" for="{{option.name}}"> {{option.name}}
+                                        <input type="checkbox" id="{{option.name}}" name="{{option.name}}" (click)="addResponses(option, $event, question.inputType)">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -33,7 +35,7 @@
                         </ng-container>
 
                         <div class='next'>
-                            <button (click)="increment()" class='button' ><span>Next!</span></button>
+                            <button (click)="add(i, question.inputType)" class='button' [disabled]='!exists(responses) && !response' ><span>Next!</span></button>
                         </div>
                        
                     </ng-container>

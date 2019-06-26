@@ -1,6 +1,8 @@
+import { Option } from 'src/app/objects/option'
+
 export class Question {
     question: string;
-    options: string[];
+    options: Option[];
     responses?: string[];
     inputType: string;
 }

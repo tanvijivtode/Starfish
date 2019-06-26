@@ -1,13 +1,70 @@
 [
+    
     {
-        "question" : "Question1",
-        "options" : ["answer1", "answer2", "answer3", "answer4", "answer5", "answer6"],
-        "responses" : [""],
+        "question" : "Describe your eating habits.",
+        "options" : [{"name":"I am vegetarian.", "checked":false}, 
+                    {"name":"I am vegan.", "checked":false}, 
+                    {"name":"I am pescetarian.", "checked":false}, 
+                    {"name":"I do not eat certain meats.", "checked":false},
+                    {"name":"I do not have dietary restrictions regarding meat.", "checked":false}],
+        "responses" : [],
         "inputType" : "select"
     },
     {
-        "question" : "Question2",
-        "options" : ["answer1", "answer2", "answer3", "answer4", "answer5", "answer6"],
+        "question" : "Do you currently have a place of work/study?",
+        "options" : [{"name":"Yes", "checked":false}, 
+                    {"name":"No", "checked":false}],     
+        "responses" : [],
+        "inputType" : "select"
+    },
+    {
+        "question" : "How long does it take for you to travel to your place of work/study?",
+        "options" : [{"name":"5-10 minutes or less" , "checked":false},
+                     {"name":"10-20 minutes", "checked":false}, 
+                     {"name":"20-40 minutes", "checked":false}, 
+                     {"name":"40-60 minutes", "checked":false},
+                     {"name":"60+ minutes", "checked":false}],
+        "responses" : [],
+        "inputType" : "select"
+    },
+    {
+        "question" : "Which of the following methods of transportation do you use consistently?",
+        "options" : [{"name":"Bus", "checked":false},
+                     {"name":"Train/subway", "checked":false}, 
+                     {"name":"Car", "checked":false}, 
+                     {"name":"Biking", "checked":false},
+                     {"name":"Walking", "checked":false}],
+        "responses" : [],
+        "inputType" : "checkbox"
+    },
+    {
+        "question" : "How old are you?",
+        "options" : [{"name":"0-10", "checked":false}, 
+                    {"name":"10-18", "checked":false}, 
+                    {"name":"18-25", "checked":false}, 
+                    {"name":"25-40", "checked":false},
+                    {"name":"40-60", "checked":false},
+                    {"name":"60+", "checked":false}],
+        "responses" : [],
+        "inputType" : "select"
+    },
+    {
+        "question" : "Which of the following describes you well?",
+        "options" : [{"name":"I love the outdoors and try to stay outside as much as possible", "checked":false},
+                     {"name":"I enjoy being outdoors, but I dont do outdoor excursions very often", "checked":false}, 
+                     {"name":"I occasionally go outdoors, and I enjoy it sometimes", "checked":false}, 
+                     {"name":"I go outdoors from time to time", "checked":false},
+                     {"name":"I prefer to stay inside", "checked":false}],
+        "responses" : [],
+        "inputType" : "checkbox"
+    },
+    {
+        "question" : "Which of the following activities are you interested in?",
+        "options" : [{"name":"Hiking", "checked":false},
+                     {"name":"Swimming", "checked":false}, 
+                     {"name":"", "checked":false}, 
+                     {"name":"", "checked":false},
+                     {"name":"", "checked":false}],
         "responses" : [],
         "inputType" : "checkbox"
     }

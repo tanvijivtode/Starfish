@@ -10,13 +10,15 @@ import { FormsModule } from '@angular/forms'
 //import { QuestionService } from 'src/services/questions.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { WaysToHelpComponent } from './library/ways-to-help/ways-to-help.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoPageComponent,
     DefaultComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    WaysToHelpComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +27,10 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     RouterModule.forRoot( [
       {path: '', redirectTo: '/info-page', pathMatch: 'full'},
-      {path: 'default', component: DefaultComponent},
-      {path: 'info-page', component: InfoPageComponent},
-      {path: 'welcome', component: WelcomeComponent}
+      {path: 'library/default', component: DefaultComponent},
+      {path: 'library/info-page', component: InfoPageComponent},
+      {path: 'library/welcome', component: WelcomeComponent},
+      {path: 'library/ways-to-help', component: WaysToHelpComponent}
     ])
   ],
   //providers: [QuestionService],

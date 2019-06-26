@@ -1,15 +1,10 @@
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+  background:  #054357;
 }
 
 form {
   height: 100%;
-}
-
-.card-header {
-  background: #21574c ;
-  border-radius: 4px;
-  padding: 1rem;
 }
 
 .form-group {
@@ -24,22 +19,21 @@ form {
   z-index: 1;
   top: 0;
   overflow-x: hidden;
-  padding-top: 20px;
 }
 
 /* Control the left side */
 .left {
   left: 0;
-  background-color: rgb(36, 55, 117);
+  background-color: #26896f ;
 }
 
 /* Control the right side */
 .right {
   right: 0;
-  background-color:  #317063;
+  background-color:  #fb7423;
 }
 
-/* If you want the content centered horizontally and vertically */
+/* If you want the content centered horizontally and vertically
 .centered {
   position: absolute;
   left: 50%;
@@ -48,44 +42,42 @@ form {
 }
 
 /* Style the image inside the centered container, if needed */
-.centered img {
+/* .centered img {
   width: 150px;
   border-radius: 50%;
+}  */
+
+.title {
+  font-size: 44px;
+  color: #fff;
+  padding-top: 18rem;
+  text-align: center;  
+}
+
+.notthebody {
+  font-size: 22px;
+  line-height: 30px; 
+  height: 100%;
+  color: #fff;
+  padding: 3rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-align: center;  
 }
 
 .welcome {  
   font-size: 50px;
   color: #fff;
-  padding-top: 250px;
+  padding-top: 200px;
   text-align: center;
-}
-
-.title {
-  font-size: 44px;
-  color: #fff;
-  padding-top: 1rem;
-  text-align: center;  
-}
-
-.notthebody {
-  font-size: 24px;
-  line-height: 30px; 
-  height: 100%;
-  color: #fff;
-  padding: 3rem;
-  text-align: center;  
-}
-
-label.card-header {
-  padding: 2rem;
 }
 
 .button {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
   display: inline-block;
   border-radius: 4px;
-  background-color: #21574c;
-  border-color:  #21574c;
+  background-color: #14627c ;
+  border-color:  #054357 ;
   color: #ffff;
   font-size: 20px;
   transition: all 0.5s;
@@ -95,12 +87,12 @@ label.card-header {
 }
 
 .button:active{
-  background: #143d35;
+  background: #023242;
 }
 
 .button:focus{
   outline: 0;
-  background: #164138;
+  background: #023242;
 }
 
 .button span {
@@ -161,77 +153,3 @@ label.card-header {
     animation-fill-mode: both;
 }
 
-/* The container */
-.container {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
-  display: inline-block;
-  position: relative;
-  padding: 2rem 3rem;
-  width: 70%;
-  background: #3f8073;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: lighter;
-  transition: all 0.5s;
-  margin: 15px;
-}
-
-.container:hover {
-  background-color: #1d5347;
-}
-
-
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  /* top: 3rem; */
-  left: 2rem;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: rgb(36, 55, 117);
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}

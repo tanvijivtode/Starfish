@@ -1,6 +1,7 @@
 import { Component, OnInit, ErrorHandler, OnChanges } from '@angular/core';
 import { Question } from 'src/app/objects/question'
-import { QuestionsService } from '/Users/tjivtode/Documents/Personal/starfish/src/services/questions.service'
+import { Option } from 'src/app/objects/option'
+import { QuestionsService } from 'src/services/questions.service'
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -22,44 +23,61 @@ export class InfoPageComponent implements OnInit {
   constructor(private questionService: QuestionsService) { 
     this.count = 0;
     this.responses = [];
+    this.response = undefined;
     this.checked = false;
   }
 
-  addResponse(response: any, event:any) {
+  toggleChecked(option: Option) {
+    option.checked = !option.checked;
+  }
+
+  addResponses(response: Option, event:any, inputType: string) {
+    this.toggleChecked(response);
     var target = event.target || event.srcElement || event.currentTarget;
-    if (target) {
-      // this.questions[index].responses.push(response);
-      this.response = response;
+    if(inputType === "select") {
+      if (target && response.checked) {
+        this.response = response.name;
+      }
+      else if(target){
+        this.response = undefined;
+      }
     }
-    // console.log(this.questions[index].responses);
-  }
-
-  show() {
-    console.log(this.responses);
-  }
-
-  toggleChecked() {
-    
-  }
-
-  addResponses(checkedElem: any, event:any) {
-    //var target = event.target || event.srcElement || event.currentTarget;
-    if (checkedElem.clicked) {
-      // this.questions[index].responses.push(response);
-      this.responses.push(checkedElem);
+    else if(inputType === "checkbox")
+    {
+      if (target && response.checked) {
+        this.responses.push(response.name);
+      }
+      else if(target){
+        this.responses = this.responses.filter(obj => obj !== response.name);
+      }
     }
-    else {
-      var index = this.responses.findIndex(checkedElem);
-      this.responses.splice(index, 1);
-    }
-    console.log(this.responses);
-    // console.log(this.questions[index].responses);
   }
 
-
+  add(index: number, inputType: string) {
+    if(inputType === "select") {
+      this.questions[index].responses.push(this.response);
+      console.log(this.questions[index].responses);
+    }
+    else if(inputType === "checkbox")
+    {
+      this.questions[index].responses = this.responses;
+      console.log(this.questions[index].responses);
+    }
+    this.response = undefined;
+    this.responses = [];
+    ++this.count;
+  }
 
   increment() {
     ++this.count;
+  }
+
+  exists( array: any[]): boolean {
+    if(array.length === 0)
+    {
+      return false;
+    }
+    return true;
   }
 
   ngOnInit() {
@@ -72,4 +90,5 @@ export class InfoPageComponent implements OnInit {
   }
 
 }
+
 
