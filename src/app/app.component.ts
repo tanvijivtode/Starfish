@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.navigateByUrl('library/info-page');    
+    this.router.navigateByUrl('library/welcome');    
   }
 
 }

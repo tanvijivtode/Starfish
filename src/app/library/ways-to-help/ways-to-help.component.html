@@ -1,14 +1,25 @@
-<div class='notthebody'>
-    <div class='title'>Ways you can help.</div>
-    <div class='notthebody'>Stop being a jerk</div>
+
+<div class='fade-in'>
+  <div class='notthebody'>
+      <div class='title'>Title</div>
     <div class='notthebody'>
-        <div class="card">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <table>
+      <tr>
+        <td *ngFor = 'let result of filteredResults; let i = index'>
+          <div [ngClass]="result.fadeIn ? 'fade-in' : 'hidden'">
+          <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">{{result.title}}</h5>
+              <p class="card-text results">{{result.description}}</p>
+              <button class="button">{{result.url}}</button>
             </div>
           </div>
+        </div>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
     </div>
+  </div>
 </div>

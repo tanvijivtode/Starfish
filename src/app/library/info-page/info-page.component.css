@@ -5,8 +5,8 @@
 }
 
 .question-header {
-  background: #d15c12 ;
-  border-radius: 4px;
+  background: var(--right-dark) ;
+  border-radius: .25rem;
   padding: 1rem;
   margin-top: 1rem;
 }
@@ -20,34 +20,35 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
     display: inline-block;
     border-radius: 4px;
-    background-color: #f88842;
-    border-color: #fb7423;
+    background-color: var(--right-light);
+    border-color: var(--right);
     color: #ffff;
     font-size: 20px;
     padding: 2rem 3rem;
-    width: 70%;
+    width: 80%;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 15px;
+    margin: 1rem;
 }
 
 .answerbutton:active{
-    background: #d15c12;
+    background: var(--right-dark);
 }
 
 .answerbutton:focus{
     outline: 0;
-    background: #d15c12;
+    background: var(--right-dark);
 }
 
 .answerbutton:hover {
-    background: #d15c12;
+    background: var(--right-dark);
 }
 
 .next {
-    bottom: 0;
+    bottom: 1rem;
+    right: 3rem;
+    position: fixed;
     padding: 1rem;
-    float: right;
     margin-bottom: 1rem;
 }
 
@@ -57,19 +58,27 @@
     display: inline-block;
     position: relative;
     padding: 2rem 3rem;
-    width: 70%;
-    background: #f88842;
-    border-color: #fb7423;
-    border-radius: 4px;
+    width: 80%;
+    background: var(--right-light);
+    border-color: var(--right);
+    border-radius: .25rem;
     cursor: pointer;
     font-size: 20px;
-    font-weight: lighter;
+    font-weight: 300 !important;
     transition: all 0.5s;
-    margin: 15px;
+    margin: 1rem;
   }
   
   .container:hover {
-    background-color: #d15c12;
+    background-color: var(--right-dark);
+  }
+
+  .wide {
+    width: 150%;
+  }
+
+  label {
+    font-weight: 300;
   }
   
   
@@ -99,7 +108,7 @@
   
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: #26896f;
+    background-color: var(--left);
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -129,19 +138,19 @@
   
   .button {
     
-    background-color: #d15c12 ;
-    border-color:  #fb7423;
+    background-color: var(--right-dark) ;
+    border-color:  var(--right);
     
     
   }
   
   .button:active{
-    background: #d15c12;
+    background: var(--right-dark);
   }
   
   .button:focus{
     outline: 0;
-    background: #d15c12;
+    background: var(--right-dark);
   }
 
 

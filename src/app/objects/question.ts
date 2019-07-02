@@ -3,6 +3,7 @@ import { Option } from 'src/app/objects/option'
 export class Question {
     question: string;
     options: Option[];
-    responses?: string[];
+    responses: string[];
     inputType: string;
+    alternate?: string;
 }

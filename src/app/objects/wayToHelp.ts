@@ -1,6 +1,9 @@
 export class WayToHelp {
     title: string;
-    imgSrc: string;
+    imgSrc?: string;
+    intro: string;
     description: string;
-    url: string;
-}
+    url?: string;
+    fadeIn: boolean;
+    tags: string[];
+} 

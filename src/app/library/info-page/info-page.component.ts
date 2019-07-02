@@ -2,29 +2,42 @@ import { Component, OnInit, ErrorHandler, OnChanges } from '@angular/core';
 import { Question } from 'src/app/objects/question'
 import { Option } from 'src/app/objects/option'
 import { QuestionsService } from 'src/services/questions.service'
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AnswersService } from 'src/services/answers.service';
 
 @Component({
   selector: 'app-info-page',
   templateUrl: './info-page.component.html',
   styleUrls: ['./info-page.component.css'],
-  providers: [QuestionsService]
 })
 export class InfoPageComponent implements OnInit {
 
   questions: Question[];
   errorHandler: ErrorHandler;
   count: number;
-  http: HttpClient;
   response: string;
   responses: string[];
   checked: boolean;
+  changed: boolean;
+  answers: string[];
   
-  constructor(private questionService: QuestionsService) { 
+  constructor(private questionService: QuestionsService,
+     private answersService: AnswersService, private router: Router) { 
     this.count = 0;
     this.responses = [];
     this.response = undefined;
     this.checked = false;
+    this.changed = false;
+    this.answers = [];
+  }
+
+  ngOnInit() {
+    this.questionService.getQuestions().toPromise()
+    .then((temp: Question[]) => {
+      this.questions = temp;
+    }).catch(err => {
+      this.errorHandler.handleError(err);
+    });
   }
 
   toggleChecked(option: Option) {
@@ -56,20 +69,27 @@ export class InfoPageComponent implements OnInit {
   add(index: number, inputType: string) {
     if(inputType === "select") {
       this.questions[index].responses.push(this.response);
-      console.log(this.questions[index].responses);
     }
-    else if(inputType === "checkbox")
-    {
+    else if(inputType === "checkbox") {
       this.questions[index].responses = this.responses;
-      console.log(this.questions[index].responses);
     }
     this.response = undefined;
     this.responses = [];
-    ++this.count;
-  }
-
-  increment() {
-    ++this.count;
+    if(this.done()) {
+      this.compile();
+      this.navToResults();
+    } 
+    if(this.questions[index].alternate) {
+      if(this.questions[index].responses[0] === "Yes") {
+        ++this.count;
+      }
+      else {
+        this.count += 2;
+      }
+    }
+    else {
+      ++this.count;
+    }
   }
 
   exists( array: any[]): boolean {
@@ -80,14 +100,30 @@ export class InfoPageComponent implements OnInit {
     return true;
   }
 
-  ngOnInit() {
-    this.questionService.getQuestions().toPromise()
-    .then((temp: Question[]) => {
-      this.questions = temp;
-    }).catch(err => {
-      this.errorHandler.handleError(err);
-    });
+  navToResults(){
+    this.changed = true;
+    setTimeout(() => {
+      this.router.navigateByUrl('library/ways-to-help');
+    }, 1000);  
   }
+
+  done() {
+    if(this.count === this.questions.length-1) {
+      return true;
+    }
+    return false;
+  }
+
+  compile() {
+    for(let i = 0; i < this.questions.length; ++i) {
+      for(let j = 0; j < this.questions[i].responses.length; ++j) {
+        this.answers.push(this.questions[i].responses[j]);
+      }
+    }
+    this.answersService.setAnswers(this.answers);
+  }
+
+
 
 }
 

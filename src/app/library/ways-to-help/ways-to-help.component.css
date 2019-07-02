@@ -4,6 +4,19 @@
     border-radius: .5rem;
     color: black;
     padding: 2rem 3rem 3rem 3rem;
-    width: 22rem;
-    display: inline-block;
+    width: 280px;
+    height: 380px;
+    margin: 1rem;
+}
+
+.card:hover {
+    background: rgb(231, 226, 226);
+}
+
+.notthebody {
+    padding: 5rem 4rem;
+}
+
+.results {
+    height: 230px;
 }

@@ -12,7 +12,7 @@ export class WelcomeComponent implements OnInit {
 
   constructor(private router: Router){
     this.changed = false;
-   }
+  }
 
   navToInfoPage() {
     this.changed = true;

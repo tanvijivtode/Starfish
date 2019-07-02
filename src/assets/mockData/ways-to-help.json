@@ -1,0 +1,48 @@
+[
+    {
+        "title": "Use e-Tickets",
+        "imgSrc": "string",
+        "intro": "",        
+        "description": "You can save money for every flight you take by using an e-ticket, and more importantly, help save the planet by reducing paper waste.",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : ["plane"] 
+    },
+    {
+        "title": "Start a compost pile",
+        "imgSrc": "string",
+        "intro": "",        
+        "description": "Compost is an incredible way to improve the soil in your your garden. It's also free, easy to maintain, and good for the environment.",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : ["suburb", "yard"] 
+    },
+    {
+        "title": "Card title",
+        "imgSrc": "string",
+        "intro": "",        
+        "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : [] 
+    },
+    {
+        "title": "Card title",
+        "imgSrc": "string",
+        "intro": "",        
+        "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : [] 
+    },
+    {
+        "title": "Card title",
+        "imgSrc": "string",
+        "intro": "",        
+        "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : [] 
+    }
+
+]

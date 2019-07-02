@@ -1,10 +1,10 @@
-<div class='fade-in'>
+<div [ngClass]="changed ? 'fade-out' :'fade-in'">
     <div class='split left'>
       <div class=''>
             <div class='title'>Tell us about yourself. </div>
             <div class='notthebody'>These questions provide Starfish with information such as interests, environment, 
                 and daily habits. This allows Starfish to generate the best sustainable activities for you!</div>
-             </div>
+      </div>
     </div>
 
     <div class='split right'>
@@ -16,6 +16,7 @@
                         <div class="question-header">
                             {{ question.question }}
                         </div> 
+
                     <ng-container *ngIf="question.inputType === 'select'">
                         <div class='notthebody'>
                             <div *ngFor="let option of question.options">
@@ -26,7 +27,8 @@
                     <ng-container *ngIf="question.inputType === 'checkbox'">
                             <div class='notthebody'>
                                 <div *ngFor="let option of question.options">
-                                    <label class="container" for="{{option.name}}"> {{option.name}}
+                                    <label class="container" for="{{option.name}}"> 
+                                        {{option.name}}
                                         <input type="checkbox" id="{{option.name}}" name="{{option.name}}" (click)="addResponses(option, $event, question.inputType)">
                                         <span class="checkmark"></span>
                                     </label>
@@ -35,17 +37,16 @@
                         </ng-container>
 
                         <div class='next'>
-                            <button (click)="add(i, question.inputType)" class='button' [disabled]='!exists(responses) && !response' ><span>Next!</span></button>
+                            <button (click)="add(i, question.inputType)" class='button' [disabled]='!exists(responses) && !response' >
+                                <span *ngIf='!done()'>Next!</span>
+                                <span *ngIf='done()'>Get My Results!</span>
+                            </button>
                         </div>
                        
                     </ng-container>
-                </div>
-
-               
-                
+                </div>                 
             </form>
         </div>
     </div>
-       
 </div>
 
