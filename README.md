@@ -1,6 +1,7 @@
 # Starfish
 
 *currently includes extraneous questions/directives for practice purposes*
+
 Starfish is an application designed to help you find ways to live 
 a more sustainable lifestyle. Based on information that you provide, including general demographic information 
 as well as what you believe may limit your ability to contribute to the environment, Starfish provides a collection of 
