@@ -81,7 +81,7 @@
                     {"name":"I am vegan", "checked":false}, 
                     {"name":"I am pescetarian", "checked":false}, 
                     {"name":"I do not eat certain meats", "checked":false},
-                    {"name":"I do not have dietary restrictions regarding meat", "checked":false}],
+                    {"name":"I don't have any restrictions regarding meat", "checked":false}],
         "responses" : [],
         "inputType" : "select"
     }

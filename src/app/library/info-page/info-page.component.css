@@ -107,6 +107,10 @@ ul.noradiobutton > li > label {
     height: 0;
     width: 0;
   }
+
+  /* .container input[type="radio"]:checked+label {
+    background-color: var(--right-dark);
+  } */
   
   /* Create a custom checkbox */
   .checkmark {
@@ -152,13 +156,56 @@ ul.noradiobutton > li > label {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
+  /* Create a custom checkbox */
+  .circle {
+    position: absolute;
+    /* top: 3rem; */
+    left: 2rem;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius:20px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .circle {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .circle {
+    background-color: var(--left);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .circle:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .circle:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .circle:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
   
   .button {
-    
     background-color: var(--right-dark) ;
-    border-color:  var(--right);
-    
-    
+    border-color:  var(--right);  
   }
   
   .button:active{
