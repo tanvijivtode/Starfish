@@ -1,4 +1,4 @@
 export class Option{
-    name: string;
+    name: any;
     checked: boolean;
 }

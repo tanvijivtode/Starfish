@@ -1,48 +1,93 @@
 [
     {
         "title": "Use e-Tickets",
-        "imgSrc": "string",
-        "intro": "",        
-        "description": "You can save money for every flight you take by using an e-ticket, and more importantly, help save the planet by reducing paper waste.",
+        "src": "http://www.stopwaste.org/at-work/reduce-and-reuse/reduce-paper-use/the-impact-of-paper-waste",
+        "intro": "You can save money for every flight/train you take by using an e-ticket, and more importantly, help save the planet by reducing paper waste.",        
+        "description": "",
         "url": "Learn More",
         "fadeIn" : false, 
         "tags" : ["plane"] 
     },
     {
         "title": "Start a compost pile",
-        "imgSrc": "string",
-        "intro": "",        
-        "description": "Compost is an incredible way to improve the soil in your your garden. It's also free, easy to maintain, and good for the environment.",
+        "src": "https://learn.eartheasy.com/guides/composting/",
+        "intro": "Compost is an incredible way to improve the soil in your your garden. It's also free, easy to maintain, and good for the environment.",        
+        "description": "",
         "url": "Learn More",
         "fadeIn" : false, 
         "tags" : ["suburb", "yard"] 
     },
     {
-        "title": "Card title",
-        "imgSrc": "string",
-        "intro": "",        
-        "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "title": "Adjust your energy use",
+        "src": "https://www.energy.gov/energysaver/spring-and-summer-energy-saving-tips",
+        "intro": "Adjust your thermostat, hot water heater, and refridgerator to more energy efficient temperatures to improve your home's sustainability.",        
+        "description": ".",
         "url": "Learn More",
         "fadeIn" : false, 
-        "tags" : [] 
+        "tags" : ["house", "suburb", "rural"] 
     },
     {
-        "title": "Card title",
-        "imgSrc": "string",
-        "intro": "",        
-        "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "title": "Rely on fans in the winter",
+        "src": "https://hometipsforwomen.com/ceiling-fans-summer-and-winter",
+        "intro": "Constant eating requires significantly more energy than heating supplemented by regular fans, where fans could actually provide a similar effect with less energy used.",        
+        "description": ".",
         "url": "Learn More",
         "fadeIn" : false, 
-        "tags" : [] 
+        "tags" : ["house", "suburb", "rural"] 
     },
     {
-        "title": "Card title",
-        "imgSrc": "string",
-        "intro": "",        
-        "description": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "title": "Use renewable energy",
+        "src": "https://www.energy.gov/energysaver/buying-and-making-electricity/buying-clean-electricity",
+        "intro": "Invest in more renewable energy sources (clean electricity) to benefit the environment as well as your wallet in the long run.",        
+        "description": "",
         "url": "Learn More",
         "fadeIn" : false, 
-        "tags" : [] 
+        "tags" : ["house", "rural"] 
+    },
+    {
+        "title": "Reduce water consumption",
+        "src": "https://www.macneilwash.com/car-washes-save-water/",
+        "intro": "Use a car wash service rather than washing your own car to ensure minimized water usage.",        
+        "description": "",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : ["car"] 
+    },
+    {
+        "title": "Have more vegetarian meals",
+        "src": "https://time.com/4266874/vegetarian-diet-climate-change/",
+        "intro": "Though you may not want to end meat consumption entirely, having fewer meals with meat can help reduce water consumption due to its production and even help preserve forests!",        
+        "description": "",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : ["certain meats", "meat", "pescetarian"] 
+    },
+    {
+        "title": "Use fewer napkins/paper towels",
+        "src": "https://greengroundswell.com/paper-vs-cloth-table-napkins-which-are-greener/2012/09/05/",
+        "intro": "Though we may not use many napkins in one meal, it adds up, so reducing this type of waste is important. Consider switching to cloth napkins, and you could help reduce landfill volume significantly.",        
+        "description": "",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : ["10-16","16-25", "25-40", "40-60", "60+"] 
+    },
+    {
+        "title": "Use more sustainable transportation",
+        "src": "https://sites.psu.edu/perspectivesontheenvironment/2015/03/27/the-effects-of-automobiles-on-the-environment/",
+        "intro": "Since you live close to your place of work/study, consider biking or walking rather than fuel-based transport. Not only will this reduce your carbon emissions, it'll improve your health! ",        
+        "description": "",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : ["5-10 minutes or less"] 
+    },
+    {
+        "title": "Use more sustainable transportation",
+        "src": "https://www.transit.dot.gov/regulations-and-guidance/environmental-programs/transit-environmental-sustainability/transit-role",
+        "intro": "Consider more public transport like buses or trains rather than travelling by car (it makes a huge difference). If car is the only available method of transport, try carpooling more to help save gas.",        
+        "description": "",
+        "url": "Learn More",
+        "fadeIn" : false, 
+        "tags" : ["10-20 minutes", "20-40 minutes", "40-60 minutes", "60+ minutes", "Car", "big city", "suburb"] 
     }
 
 ]

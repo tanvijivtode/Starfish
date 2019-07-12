@@ -27,11 +27,11 @@ export class WaysToHelpComponent implements OnInit {
   }
 
   filterResults() {
-    for(let i = 0; i < this.answers.length; ++i) {
+   for(let i = 0; i < this.answers.length; ++i) {
       for(let j = 0; j < this.results.length; ++j) {
         for(let k = 0; k < this.results[j].tags.length; ++k)
         {
-          if(this.answers[i].toLocaleLowerCase().includes(this.results[j].tags[k]))
+          if(this.answers[i].toString().toLocaleLowerCase().includes(this.results[j].tags[k]) && !this.filteredResults.find(x => x.intro === this.results[j].intro))
           {
             this.filteredResults.push(this.results[j]);
           }
@@ -41,6 +41,7 @@ export class WaysToHelpComponent implements OnInit {
   }
 
   ngOnInit() {
+    debugger;
     this.answers = this.answersService.getAnswers();
     console.log('answers: ' + this.answers);
     this.waysToHelpService.getWaysToHelp().toPromise()
@@ -55,7 +56,7 @@ export class WaysToHelpComponent implements OnInit {
         }, i*300); 
       } 
     }).catch(err => {
-      this.errorHandler.handleError(err);
+      console.log(err);
     });
   }
 

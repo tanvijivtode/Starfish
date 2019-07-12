@@ -1,6 +1,6 @@
 export class WayToHelp {
     title: string;
-    imgSrc?: string;
+    src?: string;
     intro: string;
     description: string;
     url?: string;

@@ -87,7 +87,7 @@ form {
   display: inline-block;
   border-radius: .25rem;
   background-color: var(--default-light) ;
-  border-color:  var(--default) ;
+  border-color:  var(--default-light) ;
   color: #ffff;
   font-size: 20px;
   transition: all 0.5s;
@@ -98,11 +98,13 @@ form {
 
 .button:active{
   background: var(--default-dark);
+  border-color:  var(--default-dark);
 }
 
 .button:focus{
   outline: 0;
   background: var(--default-dark);
+  border-color:  var(--default-dark);
 }
 
 .button span {
@@ -167,4 +169,5 @@ form {
 .hidden {
   visibility: hidden;
 }
+
 

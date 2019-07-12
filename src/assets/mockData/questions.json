@@ -1,25 +1,38 @@
 [
     {
-        "question" : "Which of the following describes you well?",
-        "options" : [{"name":"I love the outdoors and am always outside", "checked":false},
-                     {"name":"I usually enjoy being outdoors", "checked":false}, 
-                     {"name":"I frequently go outdoors", "checked":false}, 
-                     {"name":"I go outdoors from time to time", "checked":false},
-                     {"name":"I prefer to stay inside", "checked":false}],
-        "responses" : [],
-        "inputType" : "checkbox"
-    },
-    {
-        "question" : "Describe your eating habits.",
-        "options" : [{"name":"I am vegetarian", "checked":false}, 
-                    {"name":"I am vegan", "checked":false}, 
-                    {"name":"I am pescetarian", "checked":false}, 
-                    {"name":"I do not eat certain meats", "checked":false},
-                    {"name":"I do not have dietary restrictions regarding meat", "checked":false}],
+        "question" : "How old are you?",
+        "options" : [{"name":"10-16", "checked":false}, 
+                    {"name":"16-25", "checked":false}, 
+                    {"name":"25-40", "checked":false},
+                    {"name":"40-60", "checked":false},
+                    {"name":"60+", "checked":false}],
         "responses" : [],
         "inputType" : "select"
     },
     {
+        "question" : "What is closest to your average annual household income?",
+        "options" : [{"name":0 , "checked":false},
+                     {"name":30000 , "checked":false},
+                     {"name":50000, "checked":false}, 
+                     {"name":80000, "checked":false}, 
+                     {"name":100000, "checked":false},
+                     {"name":150000, "checked":false},
+                     {"name":200000, "checked":false}],
+        "responses" : [],
+        "inputType" : "selectNum"
+    },
+    {
+        "question" : "What is your favorite color?",
+        "options" : [{"name":"red", "checked":false}, 
+                    {"name":"orange", "checked":false}, 
+                    {"name":"yellow", "checked":false},
+                    {"name":"green", "checked":false},
+                    {"name":"blue", "checked":false},
+                    {"name":"purple", "checked":false}],
+        "responses" : [],
+        "inputType" : "selectCol"
+    },
+    {   
         "question" : "Describe where you live.",
         "options" : [{"name":"I live in a rural area", "checked":false}, 
                     {"name":"I live in a big city", "checked":false}, 
@@ -53,22 +66,24 @@
     {
         "question" : "Which of the following methods of transportation do you use consistently?",
         "options" : [{"name":"Bus", "checked":false},
+                     {"name":"Rideshare services", "checked":false},
                      {"name":"Plane", "checked":false},
                      {"name":"Train/subway", "checked":false}, 
-                     {"name":"Car", "checked":false}, 
+                     {"name":"Personal car", "checked":false}, 
                      {"name":"Biking", "checked":false},
                      {"name":"Walking", "checked":false}],
         "responses" : [],
         "inputType" : "checkbox"
     },
     {
-        "question" : "How old are you?",
-        "options" : [{"name":"10-16", "checked":false}, 
-                    {"name":"16-25", "checked":false}, 
-                    {"name":"25-40", "checked":false},
-                    {"name":"40-60", "checked":false},
-                    {"name":"60+", "checked":false}],
+        "question" : "Describe your eating habits.",
+        "options" : [{"name":"I am vegetarian", "checked":false}, 
+                    {"name":"I am vegan", "checked":false}, 
+                    {"name":"I am pescetarian", "checked":false}, 
+                    {"name":"I do not eat certain meats", "checked":false},
+                    {"name":"I do not have dietary restrictions regarding meat", "checked":false}],
         "responses" : [],
         "inputType" : "select"
     }
+   
 ]

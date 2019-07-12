@@ -1,25 +1,22 @@
-
 <div class='fade-in'>
-  <div class='notthebody'>
-      <div class='title'>Title</div>
     <div class='notthebody'>
-    <table>
-      <tr>
-        <td *ngFor = 'let result of filteredResults; let i = index'>
-          <div [ngClass]="result.fadeIn ? 'fade-in' : 'hidden'">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{result.title}}</h5>
-              <p class="card-text results">{{result.description}}</p>
-              <button class="button">{{result.url}}</button>
-            </div>
-          </div>
-        </div>
-        </td>
-        <td>
-        </td>
-      </tr>
-    </table>
+      <div class='title'>Ways to Help</div>
+      <div class='notthebody'>
+        <table>
+          <tr>
+            <td *ngFor='let result of filteredResults; let i = index'>
+              <div [ngClass]="result.fadeIn ? 'fade-in' : 'hidden'">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{result.title}}</h5>
+                    <p class="card-text results">{{result.intro}}</p>
+                    <a href="{{result.src}}" ><button class="button"><span>{{result.url}}</span></button></a>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
-</div>

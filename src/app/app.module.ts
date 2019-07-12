@@ -1,16 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InfoPageComponent } from './library/info-page/info-page.component';
 import { DefaultComponent } from './library/default/default.component';
 import { WelcomeComponent } from './library/welcome/welcome.component';
 import { FormsModule } from '@angular/forms'
-//import { QuestionService } from 'src/services/questions.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { WaysToHelpComponent } from './library/ways-to-help/ways-to-help.component';
+import { ColorDirective } from './color.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,8 @@ import { WaysToHelpComponent } from './library/ways-to-help/ways-to-help.compone
     InfoPageComponent,
     DefaultComponent,
     WelcomeComponent,
-    WaysToHelpComponent
+    WaysToHelpComponent,
+    ColorDirective,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,6 @@ import { WaysToHelpComponent } from './library/ways-to-help/ways-to-help.compone
       {path: 'library/ways-to-help', component: WaysToHelpComponent}
     ])
   ],
-  //providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

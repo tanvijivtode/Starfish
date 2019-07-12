@@ -15,9 +15,9 @@ export class InfoPageComponent implements OnInit {
   questions: Question[];
   errorHandler: ErrorHandler;
   count: number;
-  response: string;
-  responses: string[];
-  checked: boolean;
+  response: any;
+  responses: any[];
+  //checked: boolean;
   changed: boolean;
   answers: string[];
   
@@ -26,7 +26,7 @@ export class InfoPageComponent implements OnInit {
     this.count = 0;
     this.responses = [];
     this.response = undefined;
-    this.checked = false;
+    //this.checked = false;
     this.changed = false;
     this.answers = [];
   }
@@ -47,13 +47,13 @@ export class InfoPageComponent implements OnInit {
   addResponses(response: Option, event:any, inputType: string) {
     this.toggleChecked(response);
     var target = event.target || event.srcElement || event.currentTarget;
-    if(inputType === "select") {
+    if(inputType !== "checkbox") {
       if (target && response.checked) {
         this.response = response.name;
       }
-      else if(target){
-        this.response = undefined;
-      }
+      // else if(target){
+      //   this.response = undefined;
+      // }
     }
     else if(inputType === "checkbox")
     {
@@ -67,7 +67,7 @@ export class InfoPageComponent implements OnInit {
   }
 
   add(index: number, inputType: string) {
-    if(inputType === "select") {
+    if(inputType !== "checkbox") {
       this.questions[index].responses.push(this.response);
     }
     else if(inputType === "checkbox") {

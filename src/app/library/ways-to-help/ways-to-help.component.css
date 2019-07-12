@@ -1,22 +1,42 @@
-
 .card {
     background: #ffff;
     border-radius: .5rem;
     color: black;
     padding: 2rem 3rem 3rem 3rem;
     width: 280px;
-    height: 380px;
+    height: 450px;
     margin: 1rem;
 }
 
-.card:hover {
-    background: rgb(231, 226, 226);
+.card-text {
+    font-size: 18px;
+    width: 220px;
 }
+
+/* .card:hover {
+    background: rgb(231, 226, 226);
+} */
+
+.button {
+    color: #ffff;
+}
+.card { transition: all .2s ease-in-out; }
+.card:hover { transform: scale(1.1); }
+
 
 .notthebody {
     padding: 5rem 4rem;
+    overflow-x: auto;
 }
 
 .results {
-    height: 230px;
+    height: 300px;
+}
+
+.title {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
