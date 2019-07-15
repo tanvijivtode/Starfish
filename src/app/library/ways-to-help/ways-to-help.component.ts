@@ -31,7 +31,8 @@ export class WaysToHelpComponent implements OnInit {
       for(let j = 0; j < this.results.length; ++j) {
         for(let k = 0; k < this.results[j].tags.length; ++k)
         {
-          if(this.answers[i].toString().toLocaleLowerCase().includes(this.results[j].tags[k]) && !this.filteredResults.find(x => x.intro === this.results[j].intro))
+          if(this.answers[i].name.toString().toLocaleLowerCase().includes(this.results[j].tags[k]) 
+          && !this.filteredResults.find(x => x.intro === this.results[j].intro))
           {
             this.filteredResults.push(this.results[j]);
           }
@@ -41,11 +42,11 @@ export class WaysToHelpComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger;
-    this.answers = this.answersService.getAnswers();
-    console.log('answers: ' + this.answers);
-    this.waysToHelpService.getWaysToHelp().toPromise()
-    .then((temp: WayToHelp[]) => {
+    this.answersService.getAnswers().subscribe((temp: any[]) => {
+      this.answers = temp;
+      console.log('answers: ' + this.answers);
+    });
+    this.waysToHelpService.getWaysToHelp().subscribe((temp: WayToHelp[]) => {
       this.results = temp;
       console.log("results: " + this.results);
       this.filterResults();
@@ -55,8 +56,6 @@ export class WaysToHelpComponent implements OnInit {
           this.filteredResults[i-1].fadeIn = true;
         }, i*300); 
       } 
-    }).catch(err => {
-      console.log(err);
     });
   }
 

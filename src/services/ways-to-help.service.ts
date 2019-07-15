@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { WayToHelp } from 'src/app/objects/wayToHelp';
 
@@ -8,6 +8,8 @@ import { WayToHelp } from 'src/app/objects/wayToHelp';
   providedIn: 'root'
 })
 export class WaysToHelpService {
+
+  private waysUrl = 'api/ways';  // URL to web api
 
   constructor(protected http: HttpClient) { 
     // this.getWaysToHelp().subscribe(data => {
@@ -17,6 +19,6 @@ export class WaysToHelpService {
 
   public getWaysToHelp(): Observable<WayToHelp[]> {
   
-    return this.http.get<WayToHelp[]>('./assets/mockData/ways-to-help.json');
+    return this.http.get<WayToHelp[]>(this.waysUrl);
   }
 }

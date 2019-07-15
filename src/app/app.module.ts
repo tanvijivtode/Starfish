@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { WaysToHelpComponent } from './library/ways-to-help/ways-to-help.component';
 import { ColorDirective } from './color.directive';
+import { InMemoryDataService } from 'src/services/in-memory-data.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,13 @@ import { ColorDirective } from './color.directive';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
     RouterModule.forRoot( [
       {path: '', redirectTo: '/info-page', pathMatch: 'full'},
       {path: 'library/default', component: DefaultComponent},

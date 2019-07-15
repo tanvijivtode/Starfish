@@ -4,6 +4,8 @@ import { Option } from 'src/app/objects/option'
 import { QuestionsService } from 'src/services/questions.service'
 import { Router } from '@angular/router';
 import { AnswersService } from 'src/services/answers.service';
+import questions from 'src/assets/mockData/questions.json'
+import { Answer } from 'src/app/objects/answer';
 
 @Component({
   selector: 'app-info-page',
@@ -115,12 +117,19 @@ export class InfoPageComponent implements OnInit {
   }
 
   compile() {
+    let index: number = 0;
+    // debugger;
     for(let i = 0; i < this.questions.length; ++i) {
       for(let j = 0; j < this.questions[i].responses.length; ++j) {
-        this.answers.push(this.questions[i].responses[j]);
+        let answer = new Answer;
+        answer.name = this.questions[i].responses[j];
+        answer.id = index;
+        ++index;
+        this.answersService.addAnswer(answer).subscribe((data : any)=>{
+          console.log("current response: " + data);
+        });
       }
     }
-    this.answersService.setAnswers(this.answers);
   }
 
 
