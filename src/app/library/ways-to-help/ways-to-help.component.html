@@ -1,22 +1,31 @@
-<div class='fade-in'>
-    <div class='notthebody'>
-      <div class='title'>Ways to Help</div>
+
+    <div class='fade-in'>
       <div class='notthebody'>
-        <table>
-          <tr>
-            <td *ngFor='let result of filteredResults; let i = index'>
-              <div [ngClass]="result.fadeIn ? 'fade-in' : 'hidden'">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">{{result.title}}</h5>
-                    <p class="card-text results">{{result.intro}}</p>
-                    <a href="{{result.src}}" ><button class="button"><span>{{result.url}}</span></button></a>
+        <div class='title'>Ways to Help</div>
+
+        <div class='notthebody'>
+          <ng-container *ngIf='!loaded'>      
+              <div class="loader"></div> 
+            </ng-container>
+
+          <ng-container *ngIf='loaded'>
+            <table>
+              <tr>
+                <td *ngFor='let result of filteredResults; let i = index'>
+                  <div [ngClass]="result.fadeIn ? 'fade-in' : 'hidden'">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">{{result.title}}</h5>
+                        <p class="card-text results">{{result.intro}}</p>
+                        <a href="{{result.src}}" ><button class="button"><span>{{result.url}}</span></button></a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
+                </td>
+              </tr>
+            </table>
+          </ng-container>
+        </div>
+
       </div>
     </div>
-  </div>

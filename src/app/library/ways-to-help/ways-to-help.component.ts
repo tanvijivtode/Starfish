@@ -3,6 +3,9 @@ import { WayToHelp } from 'src/app/objects/wayToHelp'
 import { WaysToHelpService } from 'src/services/ways-to-help.service';
 import { Router } from '@angular/router';
 import { AnswersService } from 'src/services/answers.service';
+import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { Answer } from 'src/app/objects/answer';
 
 
 @Component({
@@ -12,52 +15,46 @@ import { AnswersService } from 'src/services/answers.service';
 })
 export class WaysToHelpComponent implements OnInit {
 
-
-
   results: WayToHelp[];
   filteredResults: any[];
-  answers: any[];
   errorHandler: ErrorHandler;
   router:  Router;
+  loaded: boolean;
 
   constructor(private answersService: AnswersService, private waysToHelpService: WaysToHelpService) { 
     this.results = [];
     this.filteredResults = [];
-    this.answers = [];
+    this.loaded = false;
   }
 
-  filterResults() {
-   for(let i = 0; i < this.answers.length; ++i) {
-      for(let j = 0; j < this.results.length; ++j) {
-        for(let k = 0; k < this.results[j].tags.length; ++k)
-        {
-          if(this.answers[i].name.toString().toLocaleLowerCase().includes(this.results[j].tags[k]) 
-          && !this.filteredResults.find(x => x.intro === this.results[j].intro))
-          {
-            this.filteredResults.push(this.results[j]);
-          }
-        }
-      }
+  filterResults(array: Answer[]) {
+  //determine which waystohelp have all tags in their tags array match to any of answers in the answers array
+  //filter the results array by the objects where any of their tags are included in any of the answers names
+    function check(element) {
+      return array.some(x => x.name.toString().toLocaleLowerCase().includes(element));
     }
+    this.filteredResults = this.results.filter(x => x.tags.some(check)); 
+  }
+
+  printResults(){
+    console.log("filtered results: " + this.filteredResults);
+    for(let i = 1; i < this.filteredResults.length+1; ++i) {
+      setTimeout(() => {
+        this.filteredResults[i-1].fadeIn = true;
+      }, i*300); 
+    } 
   }
 
   ngOnInit() {
-    this.answersService.getAnswers().subscribe((temp: any[]) => {
-      this.answers = temp;
-      console.log('answers: ' + this.answers);
-    });
     this.waysToHelpService.getWaysToHelp().subscribe((temp: WayToHelp[]) => {
-      this.results = temp;
-      console.log("results: " + this.results);
-      this.filterResults();
-      console.log("filtered results: " + this.filteredResults);
-      for(let i = 1; i < this.filteredResults.length+1; ++i) {
-        setTimeout(() => {
-          this.filteredResults[i-1].fadeIn = true;
-        }, i*300); 
-      } 
+      this.results = temp; 
+    });
+    this.answersService.getAnswers().subscribe((answers: Answer[]) => {
+     setTimeout(() => {
+      this.filterResults(answers);
+      this.loaded = true;
+      this.printResults();
+    }, 3000); 
     });
   }
-
-
 }
